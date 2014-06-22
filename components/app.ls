@@ -2,9 +2,11 @@ require! <[
   react
 ]>
 
-{a} = react.DOM
+{div, h1, a} = react.DOM
 
 module.exports = react.create-class do
   display-name: 'App'
   render: ->
-    a href: '/another-app', 'Another App'
+    div null,
+      h1 null, @props.heading
+      a href: '/another-app', 'Another App'
