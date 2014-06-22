@@ -1,1 +1,1 @@
-require("index").start();
+require('./components/index.ls').start();

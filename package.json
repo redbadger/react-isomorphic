@@ -1,17 +1,17 @@
 {
-  "name": "tesco-ighs-web",
+  "name": "react-isomorphic",
   "version": "0.0.0",
-  "description": "Tesco IGHS Web client",
+  "description": "example isomorphic app",
   "dependencies": {
-    "LiveScript": "",
-    "bluebird": "",
-    "body-parser": "",
-    "express": "",
+    "LiveScript": "^1.2.0",
+    "bluebird": "^2.1.3",
+    "body-parser": "^1.4.3",
+    "express": "^4.4.4",
     "jade": "^1.3.1",
     "page": "redbadger/page.js",
-    "prelude-ls": "",
-    "react": "",
-    "superagent": ""
+    "prelude-ls": "^1.1.1",
+    "react": "^0.10.0",
+    "superagent": "^0.18.0"
   },
   "devDependencies": {
     "browserify": "",

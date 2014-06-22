@@ -11,15 +11,13 @@ module.exports = routes = express.Router!
 routes.use render-component
 
 routes.get '/' (req, res) ->
-  res.render-component do
-    App
+  res.render-component App,
     title: 'app'
     component: 'app'
     props:
       heading: 'Hello'
 
 routes.get '/another-app' (req, res) ->
-  res.render-component do
-    Another-App
+  res.render-component Another-App,
     title: 'another app'
     component: 'another-app'

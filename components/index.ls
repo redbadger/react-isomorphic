@@ -9,7 +9,7 @@ components =
   'another-app': -> require './another-app.ls'
 
 exports.start = ->
-  root = document.get-element-by-id \content
-  if root?
-    Component = components[root.className]!
-    react.render-component (new Component props), root
+  mount-point = document.get-element-by-id \content
+  if mount-point?
+    component = components[mount-point.className]!
+    react.render-component (component props), mount-point

@@ -29,8 +29,8 @@ get-bundler = (instance) ->
   unless is-dev
     bundler.transform envify
     bundler.transform global: true, uglifyify
-  bundler.require 'react' expose: 'react'
-  bundler.require './components/index.ls' expose: 'index'
+  bundler.require 'react'
+  bundler.require './components/index.ls'
 
 build-config =
   debug: is-dev
