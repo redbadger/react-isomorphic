@@ -5,6 +5,6 @@ html
     title=title
     link(href='/styles/index.css' rel='stylesheet' type='text/css' media='all')
   body
-    #content!=content
-    script(src='/scripts/app.js')
+    #content(class=component)!=content
+    script(src='/scripts/index.js')
     script(src='/scripts/bootstrap.js')

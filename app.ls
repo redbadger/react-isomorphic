@@ -1,5 +1,6 @@
 require! <[
   ./components/App
+  ./components/Another-App
   body-parser
   express
   path
@@ -22,8 +23,16 @@ routes = express.Router!
 routes.get '/' (req, res) ->
   res.render do
     'layout'
-    title: 'test'
+    title: 'app'
+    component: 'app'
     content: react.render-component-to-string new App!
+
+routes.get '/another-app' (req, res) ->
+  res.render do
+    'layout'
+    title: 'another app'
+    component: 'another-app'
+    content: react.render-component-to-string new Another-App!
 
 app.use routes
 

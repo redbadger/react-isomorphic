@@ -5,6 +5,6 @@ require! <[
 {a} = react.DOM
 
 module.exports = react.create-class do
-  display-name: 'App'
+  display-name: 'Another-App'
   render: ->
-    a href: '/another-app', 'Another App'
+    a href: '/', 'The first App'

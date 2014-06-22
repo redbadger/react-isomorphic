@@ -24,13 +24,13 @@ gulp.task 'copy-scripts' ->
   .pipe gulp.dest 'public/scripts'
 
 get-bundler = (instance) ->
-  bundler = instance './components/app.ls'
+  bundler = instance './components/index.ls'
   bundler.transform liveify
   unless is-dev
     bundler.transform envify
     bundler.transform global: true, uglifyify
   bundler.require 'react' expose: 'react'
-  bundler.require './components/app.ls' expose: 'app'
+  bundler.require './components/index.ls' expose: 'index'
 
 build-config =
   debug: is-dev
@@ -40,7 +40,7 @@ update = (bundler) ->
   bundler.bundle build-config
   .on 'error' gulp-util.log
   .on 'end' -> gulp-util.log 'Bundle complete'
-  .pipe vinyl-source-stream 'app.js'
+  .pipe vinyl-source-stream 'index.js'
   .pipe gulp.dest 'public/scripts/'
 
 gulp.task 'browserify' -> browserify |> get-bundler |> update
