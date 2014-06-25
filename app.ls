@@ -1,6 +1,4 @@
 require! <[
-  ./components/App
-  ./components/Another-App
   ./routes
   body-parser
   express
