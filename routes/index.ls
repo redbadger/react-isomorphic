@@ -1,18 +1,17 @@
 require! <[
-  ../components/App0
-  ../components/App1
-  ./render-component
   express
   react
 ]>
 
 module.exports = routes = express.Router!
 
-routes.use render-component
+base-props = (req, res, next) ->
+  res.locals.{}props.base = true;
+  next!
 
-routes.get '/:app/:page' (req, res) ->
-  res.render-component (if req.params.app is 'app0' then App0 else App1),
-    title: "App #{req.params.app}"
-    component: req.params.app
+routes.get '/:app/:page' base-props, (req, res) ->
+  res.locals.title = "App #{req.params.app}"
+
+  res.render req.params.app,
     props:
       page: req.params.page
