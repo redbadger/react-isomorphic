@@ -9,7 +9,7 @@ Please feel free to use anything you find here, and to contribute ideas by forki
 Example
 ---
 ###Server-side
-Included is an embryonic view engine for express [lib/react-view-engine.ls](lib/react-view-engine.ls) which allows us to use `res.render` to render a react component and inject it into a single jade view [views/layout.jade](views/layout.jade):
+Included is an embryonic view engine for express [lib/react-view-engine.ls](lib/react-view-engine.ls) which allows us to `res.render` a react component into a single jade view [views/layout.jade](views/layout.jade):
 
 (from [routes/index.ls](routes/index.ls))
 
@@ -81,6 +81,27 @@ tabs = react.create-class do
         a href: @format-url 'blue', 'Blue'
 ```
 We make no apology for using LiveScript throughout this project. Its functional qualities are inherited from Haskell, which alone is a great reason to use it! But if you have a strong opinion either way then please raise an issue.
+
+Building and running
+--
+First install LiveScript and Gulp:
+
+```sh
+npm install -g LiveScript gulp
+```
+
+Then build client-side assets (uses [browserify](http://browserify.org/) to bundle the compiled JavaScript) and run.
+
+```sh
+gulp
+lsc .
+```
+
+You can rebuild automatically when files change by using `gulp dev`.
+
+If you use `npm start` instead of `lsc .` it will run under [supervisor](https://github.com/isaacs/node-supervisor), restarting the app when files are changed.
+
+Navigate to http://localhost:3000/app0/page1
 
 License
 --
