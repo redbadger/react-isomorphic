@@ -94,7 +94,7 @@ npm install -g LiveScript gulp
 Install using `npm` or `git clone`
 
 ```sh
-npm install react-isomorphic
+npm install react-isomorphic .
 cd node_modules/react-isomorphic
 ```
 

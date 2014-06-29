@@ -52,4 +52,4 @@ gulp.task 'watch' ->
   update watch
 
 gulp.task 'default' ['copy-scripts' 'styles' 'browserify']
-gulp.task 'dev' ['default' 'watch']
+gulp.task 'dev' ['copy-scripts' 'styles' 'watch']
