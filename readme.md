@@ -9,7 +9,7 @@ Please feel free to use anything you find here, and to contribute ideas by forki
 Example
 ---
 ###Server-side
-Included is an embryonic view engine for express (`lib/react-view-rngine.ls`) which allows us to write our routes using `res.render` to inject a rendered react component into a single jade view (`views/layout.jade`):
+Included is an embryonic view engine for express (`lib/react-view-engine.ls`) which allows us to use `res.render` to render a react component and inject it into a single jade view (`views/layout.jade`):
 
 (from `routes/index.ls`)
 
@@ -17,7 +17,7 @@ Included is an embryonic view engine for express (`lib/react-view-rngine.ls`) wh
 routes.get '/:page' (req, res) ->
   res.locals.title = "Title"
   props = page: req.params.page
-  # 'app0' is the react component at components/app0.ls
+  # 'app0' is a react component at components/app0.ls
   res.render 'app0', props: props
 ```
 
@@ -36,7 +36,7 @@ app.engine 'ls' react-view-engine do
 ```
 
 ###Client-side
-The relevant page's root component is rendered again client-side with access to the same props, which have been serialized into a `data-props` attribute on the document element. React determines from the checksum that it doesn't need to update the DOM. If you have client-side routes declared you can carry on client-side. If you have server-side routes that match, you can refresh a client page and have the server render it for you.
+The relevant page's components are rendered again client-side with access to the same props, which have been serialized into a `data-props` attribute on the document element. React determines from the checksum that it doesn't need to update the DOM. If you have client-side routes declared you can carry on client-side. If you have server-side routes that match, you can refresh a client page and have the server render it for you.
 
 (from `components/index.ls`)
 
@@ -48,6 +48,7 @@ props-json = get 'data-props'
 props = JSON.parse props-json if props-json
 
 components =
+  # needed for browserify's static analysis
   'app0': -> require './app0.ls'
   'app1': -> require './app1.ls'
 
