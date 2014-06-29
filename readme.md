@@ -9,9 +9,9 @@ Please feel free to use anything you find here, and to contribute ideas by forki
 Example
 ---
 ###Server-side
-Included is an embryonic view engine for express (`lib/react-view-engine.ls`) which allows us to use `res.render` to render a react component and inject it into a single jade view (`views/layout.jade`):
+Included is an embryonic view engine for express [lib/react-view-engine.ls](lib/react-view-engine.ls) which allows us to use `res.render` to render a react component and inject it into a single jade view [views/layout.jade](views/layout.jade):
 
-(from `routes/index.ls`)
+(from [routes/index.ls](routes/index.ls))
 
 ``` livescript
 routes.get '/:page' (req, res) ->
@@ -23,7 +23,7 @@ routes.get '/:page' (req, res) ->
 
 Plug in the view engine like this:
 
-(from `app.ls`)
+(from [app.ls](app.ls))
 
 ``` livescript
 app.set 'views', path.join __dirname, 'components'
@@ -38,7 +38,7 @@ app.engine 'ls' react-view-engine do
 ###Client-side
 The relevant page's components are rendered again client-side with access to the same props, which have been serialized into a `data-props` attribute on the document element. React determines from the checksum that it doesn't need to update the DOM. If you have client-side routes declared you can carry on client-side. If you have server-side routes that match, you can refresh a client page and have the server render it for you.
 
-(from `components/index.ls`)
+(from [components/index.ls](components/index.ls))
 
 ``` livescript
 require! 'react'
