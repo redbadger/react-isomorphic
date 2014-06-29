@@ -8,6 +8,7 @@ Please feel free to use anything you find here, and to contribute ideas by forki
 
 Example
 ---
+
 ###Server-side
 Included is an embryonic view engine for express [lib/react-view-engine.ls](lib/react-view-engine.ls) which allows us to `res.render` a react component into a single jade view [views/layout.jade](views/layout.jade):
 
@@ -89,6 +90,19 @@ First install LiveScript and Gulp:
 ```sh
 npm install -g LiveScript gulp
 ```
+Install using `npm` or `git clone`
+
+```sh
+npm install react-isomorphic
+cd node_modules/react-isomorphic
+```
+
+or
+
+```sh
+git clone git@github.com:redbadger/react-isomorphic.git
+cd react-isomorphic
+```
 
 Then build client-side assets (uses [browserify](http://browserify.org/) to bundle the compiled JavaScript) and run.
 
@@ -101,7 +115,7 @@ You can rebuild automatically when files change by using `gulp dev`.
 
 If you use `npm start` instead of `lsc .` it will run under [supervisor](https://github.com/isaacs/node-supervisor), restarting the app when files are changed.
 
-Navigate to http://localhost:3000/app0/page1
+Navigate to [http://localhost:3000/app0/page1](http://localhost:3000/app0/page1)
 
 License
 --
