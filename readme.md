@@ -15,14 +15,15 @@ Included is an embryonic view engine for express [lib/react-view-engine.ls](lib/
 (from [routes/index.ls](routes/index.ls))
 
 ``` livescript
-routes.get '/:page' (req, res) ->
+routes.get '/' (req, res) ->
   res.locals.title = "Title"
-  props = page: req.params.page
-  # 'app0' is a react component at components/app0.ls
-  res.render 'app0', props: props
+
+  # render a react component (components/my-react-component.ls)
+  props = is-experimental: true
+  res.render 'my-react-component' props: props
 ```
 
-Plug in the view engine like this:
+Plug the view engine into express, specifying a template function for the layout:
 
 (from [app.ls](app.ls))
 
