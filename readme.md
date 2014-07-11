@@ -103,6 +103,7 @@ or
 ```sh
 git clone git@github.com:redbadger/react-isomorphic.git
 cd react-isomorphic
+npm install
 ```
 
 Then build client-side assets (uses [browserify](http://browserify.org/) to bundle the compiled JavaScript) and run.
