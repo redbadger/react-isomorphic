@@ -14,7 +14,7 @@
     "superagent": "^0.18.0"
   },
   "devDependencies": {
-    "browserify": "",
+    "browserify": "4.2.3",
     "envify": "~1.2",
     "gulp": "",
     "gulp-less": "",
@@ -23,7 +23,7 @@
     "supervisor": "",
     "uglifyify": "",
     "vinyl-source-stream": "",
-    "watchify": ""
+    "watchify": "0.10.2"
   },
   "scripts": {
     "debug": "NODE_ENV=development supervisor --debug -i node_modules -e ls,json lsc index",
